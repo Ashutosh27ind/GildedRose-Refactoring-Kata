@@ -4,7 +4,37 @@ For exercise instructions see [top level README](../README.md)
 
 Suggestion: create a python virtual environment for this project. See the [documentation](https://docs.python.org/3/library/venv.html)
 
+## Run all tests with pytest
+
+From the `python` directory, you can run all tests (including ApprovalTests and unit tests):
+
+```
+pytest tests
+```
+
+## What's New
+
+- **Conjured Items Support:**  
+  The application now supports "Conjured" items, which degrade in quality twice as fast as normal items, including after the sell-in date.  
+  - Quality never drops below 0.
+  - See `tests/test_conjured.py` for test cases.
+
+- **Refactored Codebase:**  
+  The item update logic has been refactored for better extensibility and maintainability.
+
 ## Run the unit tests from the Command-Line
+
+```
+pytest tests
+```
+
+Or to run a specific test file (e.g., for Conjured items):
+
+```
+pytest tests/test_conjured.py
+```
+
+Or the original unittest:
 
 ```
 python tests/test_gilded_rose.py
